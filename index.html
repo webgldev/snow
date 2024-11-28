@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <h1>Model Animation</h1>
+    <nav id="animation-buttons">
+      <button class="animation-button" data-animation="Idle">Model 02</button>
+      <button class="animation-button" data-animation="Rudolph">Rudolph</button>
+      <button class="animation-button" data-animation="Elf">Elf</button>
+      <button class="animation-button" data-animation="Santa">Santa</button>
+      <button class="animation-button" data-animation="Rudolph, Elf, Santa">All</button>
+    </nav>
+
+  </header>
+  <main>
+    <canvas id="canvas"></canvas>
+    <div class="memo">
+      <ul>
+        <li>1. 모델01은 애니메이션 각각 포함</li>
+        <li>2. 모델02는 애니메이션 모두 포함</li>
+        <li>3. 눈송이는 CSS, JS로 생성</li>
+        <li>4. 안개는 씬에 추가</li>
+        <li>5. 바닥 png 노말맵 생성</li>
+        <li>6. emissive 속성 추가</li>
+      </ul>
+    </div>
+  </main>
+  <script src="script.js" type="module"></script>
+</body>
+</html>

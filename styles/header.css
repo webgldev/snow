@@ -1,0 +1,26 @@
+header {
+  padding: 20px;
+  color: #ccc;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+}
+header nav button {
+  padding: 16px;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  border: none;
+  height: fit-content;
+}
+header nav button:hover {
+  background-color: #000;
+  color: #fff;
+}

@@ -1,0 +1,17 @@
+.memo {
+  background: #000;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #fff;
+  width: fit-content;
+  padding: 40px;
+  margin-right: 24px;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 24px;
+  right: 0;
+}
+.memo ul {
+  list-style: none;
+  text-align: left;
+}

@@ -1,0 +1,8 @@
+.snow {
+  filter: drop-shadow(3px 2px 8px white);
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+}
