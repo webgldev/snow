@@ -1,0 +1,51 @@
+name: Deploy dist to another repo # actions에 보여질 이름
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - main # 배포할 브랜치 이름
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. 리포지토리 체크아웃
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      # 2. Node.js 설치 및 의존성 설치
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          
+      - run: npm install
+      
+      # 3. Vite로 프로젝트 빌드
+      - name: Build with Vite
+        run: npm run build
+
+      # 4. 유저 이름, 이메일, 커밋 메시지
+      - name: Commit changes
+        run: |
+          git config --local user.email "wfedev+build@gmail.com"
+          git config --local user.name "webgldev"
+          git add -f dist
+          git commit -m "Update"
+
+      # 5. 커밋 후 dist 폴더 배포
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.DEPLOY_TOKEN }}
+        with:
+          # 배포 받을 리포지토리 경로
+          source-directory: 'dist'
+          destination-github-username: 'webgldev'
+          destination-repository-name: 'glbanimation'
+          user-email: wfedev+build@gmail.com
+          target-branch: main
