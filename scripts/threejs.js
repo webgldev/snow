@@ -45,12 +45,12 @@ controls.enableDamping = true;
 const textureLoader = new THREE.TextureLoader();
 
 // 바닥 텍스처
-const floorTexture = textureLoader.load('../public/snowplan.png');
+const floorTexture = textureLoader.load('./snowplan.png');
 floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping;
 floorTexture.repeat.set(10, 10);
 
 // 생성된 노멀 맵
-const floorNormalMap = textureLoader.load('../public/snowplan_normal.png');
+const floorNormalMap = textureLoader.load('./snowplan_normal.png');
 floorNormalMap.wrapS = floorNormalMap.wrapT = THREE.RepeatWrapping;
 floorNormalMap.repeat.set(1, 1);
 
@@ -115,17 +115,17 @@ function loadModel(url, name, position = { x: 0, y: 0, z: 0 }, scale = { x: 1, y
 
 // 모델 로드
 // 캐릭터
-loadModel('model01-01.glb', 'model01', { x: 0, y: 0, z: -1 }, { x: 0.4, y: 0.4, z: 0.4 }, { x: 0, y: 0, z: 0 });
+loadModel('./model01-01.glb', 'model01', { x: 0, y: 0, z: -1 }, { x: 0.4, y: 0.4, z: 0.4 }, { x: 0, y: 0, z: 0 });
 // 캐릭터2
-loadModel('model02.glb', 'model02', { x: -0.5, y: 0.01, z: 0.8 }, { x: 0.01, y: 0.01, z: 0.01 }, { x: 0, y: -0.5, z: 0 });
+loadModel('./model02.glb', 'model02', { x: -0.5, y: 0.01, z: 0.8 }, { x: 0.01, y: 0.01, z: 0.01 }, { x: 0, y: -0.5, z: 0 });
 // 썰매
-// loadModel('sleigh.glb', 'sleigh', { x: 2.5, y: 0.5, z: -1.5 }, { x: 0.003, y: 0.003, z: 0.003 }, { x: 0, y: -1, z: 0 });
+// loadModel('./sleigh.glb', 'sleigh', { x: 2.5, y: 0.5, z: -1.5 }, { x: 0.003, y: 0.003, z: 0.003 }, { x: 0, y: -1, z: 0 });
 // 나무
-loadModel('tree.glb', 'tree', { x: 1, y: 0, z: 1 }, { x: 0.2, y: 0.2, z: 0.2 }, { x: 0, y: Math.PI / -1.2, z: 0 });
+loadModel('./tree.glb', 'tree', { x: 1, y: 0, z: 1 }, { x: 0.2, y: 0.2, z: 0.2 }, { x: 0, y: Math.PI / -1.2, z: 0 });
 // 눈사람
-loadModel('snow_man.glb', 'snow_man', { x: -0.5, y: 0.2, z: 0 }, { x: 0.2, y: 0.2, z: 0.2 }, { x: 0, y: -2, z: 0 });
+loadModel('./snow_man.glb', 'snow_man', { x: -0.5, y: 0.2, z: 0 }, { x: 0.2, y: 0.2, z: 0.2 }, { x: 0, y: -2, z: 0 });
 // 선물
-loadModel('gifts.glb', 'gifts', { x: 0.3, y: 0, z: 0.3 }, { x: 0.8, y: 0.8, z: 0.8 }, { x: 0, y: -2, z: 0 });
+loadModel('./gifts.glb', 'gifts', { x: 0.3, y: 0, z: 0.3 }, { x: 0.8, y: 0.8, z: 0.8 }, { x: 0, y: -2, z: 0 });
 
 // 블룸 효과 (포스트 프로세서)
 const composer = new EffectComposer(renderer);
